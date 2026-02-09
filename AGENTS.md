@@ -20,5 +20,6 @@ This is the **cursor-scaffold** project: **source-of-truth + tooling for Cursor 
 - Notes:
   - `.cursor/notes/bootstrap-new-machine.md` — set up a new computer (layout, clone hub + scaffold, open workspace)
   - `.cursor/notes/importing-projects.md` — import existing projects into the hub structure (placement, bootstrap, optional workspace roots)
+  - `.cursor/notes/external-context-for-projects.md` — pattern for giving projects access to context in another repo (infra, shared docs); summary + optional workspace variant
 - Rule: `.cursor/rules/self-document-workflows.mdc`
 
