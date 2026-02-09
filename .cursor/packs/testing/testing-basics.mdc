@@ -1,0 +1,17 @@
+---
+description: Testing fundamentals (AAA, isolation, edge cases, determinism).
+globs: ["**/*"]
+alwaysApply: false
+---
+
+## Testing basics
+
+- **Write tests for new behavior** (or bug fixes) where failure would be costly or non-obvious.
+- **Use AAA**: Arrange → Act → Assert.
+- **Test edge cases**: empty inputs, missing fields, boundaries, invalid formats, error paths.
+- **Keep tests deterministic**:
+  - control time, randomness, and external I/O via fakes/mocks/fixtures
+  - avoid network calls in unit tests
+- **Avoid shared global state** between tests; keep setup/teardown explicit.
+- **Name tests for intent**: what behavior is expected, not implementation details.
+

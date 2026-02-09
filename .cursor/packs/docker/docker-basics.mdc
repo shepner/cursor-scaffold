@@ -1,0 +1,26 @@
+---
+description: Dockerfile basics (small images, safe defaults, and log viewing sanity).
+globs: ["**/Dockerfile*", "**/*.dockerfile", "**/docker-compose*.yml", "**/docker-compose*.yaml"]
+alwaysApply: false
+---
+
+## Docker basics
+
+### Build optimization
+
+- **Pin base images** (avoid `:latest`); prefer slim/minimal images when appropriate.
+- **Use multi-stage builds** to keep runtime images small.
+- **Order for caching**: copy dependency manifests first (e.g. `requirements.txt`, `package*.json`), then install, then copy app code.
+- **Minimize layers**: combine related `RUN` steps; clean caches in the same layer.
+- **Use `.dockerignore`** to keep the build context small.
+
+### Runtime/security defaults
+
+- **Run as non-root** where practical.
+- Prefer explicit `HEALTHCHECK` for services.
+
+### Log viewing sanity
+
+- Prefer bounded log views for analysis (`--tail`, `--since`, `--until`).
+- Avoid unbounded `-f/--follow` unless you also bound it (timeout/until) to prevent hanging sessions.
+

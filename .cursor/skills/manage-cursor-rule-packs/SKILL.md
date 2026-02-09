@@ -12,6 +12,7 @@ This repo keeps a curated pack library under `.cursor/packs/` and installs selec
 - **Keep packs small and sharp**: high signal, low noise.
 - **Prefer opt-in**: install with `alwaysApply: false` unless explicitly enabled.
 - **Treat packs as source material**: projects receive copies under their own `.cursor/rules/`.
+ - **Avoid legacy DSLs**: keep pack rules as plain, actionable guidance; no custom `<rule>...</rule>` schemas.
 
 ## Install packs into an existing repo
 
@@ -39,4 +40,12 @@ python3 .cursor/helpers/bootstrap-project.py /path/to/repo \
   --install-packs core git security \
   --apply
 ```
+
+## Salvaging legacy rules
+
+When salvaging ideas from older rule collections:
+
+- extract the *principle* (not the implementation)
+- rewrite as a short pack rule (ideally <50 lines)
+- default to `alwaysApply: false`
 

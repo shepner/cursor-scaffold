@@ -1,0 +1,18 @@
+---
+description: Logging quality bar (levels, context, structure, no secrets).
+globs: ["**/*"]
+alwaysApply: false
+---
+
+## Logging (quality bar)
+
+- **Use log levels intentionally**:
+  - ERROR for failures that need attention
+  - WARN for degraded behavior
+  - INFO for normal operations and milestones
+  - DEBUG for developer diagnostics
+- **Include context**: component/module, request/job identifiers, counts, durations.
+- **Prefer structured logs** when feasible (key/value fields) so logs are searchable.
+- **Never log secrets**: credentials, tokens, full auth headers, private keys, or sensitive payloads.
+- **Avoid noisy logs** in hot loops; aggregate counts and log summaries.
+

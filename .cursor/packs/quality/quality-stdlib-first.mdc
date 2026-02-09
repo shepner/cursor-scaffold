@@ -1,0 +1,16 @@
+---
+description: Prefer standard library and minimal dependencies; justify new deps.
+globs: ["**/*"]
+alwaysApply: false
+---
+
+## Standard library first (dependency discipline)
+
+- **Before adding a dependency**, check whether the standard library (or existing deps) already cover the need well enough.
+- **Justify new dependencies**:
+  - why stdlib isn’t sufficient
+  - why this library (maturity, maintenance, security posture)
+  - expected surface area (where it will be used)
+- **Prefer fewer, well-chosen dependencies** over many micro-deps.
+- **Pin and document** runtime-critical dependencies and any security-sensitive ones.
+

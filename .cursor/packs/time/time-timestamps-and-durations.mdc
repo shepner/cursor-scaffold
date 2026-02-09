@@ -1,0 +1,21 @@
+---
+description: Timestamp/datetime conventions and duration formats (UTC, ISO 8601, explicitness).
+globs: ["**/*.{py,js,ts,sql,json,yml,yaml,md}"]
+alwaysApply: false
+---
+
+## Time: timestamps, datetimes, durations
+
+- **Be explicit about timezone**:
+  - avoid “naive” datetimes for persisted/serialized values
+  - prefer **UTC** at rest, convert at the edges (display/UI)
+- **Serialize timestamps predictably**:
+  - prefer ISO 8601 / RFC 3339 strings (include `Z` or offset)
+  - document units when using epoch seconds/milliseconds
+- **Parsing**:
+  - handle missing/invalid values deliberately (reject vs coerce vs default)
+  - log or surface bad formats when data quality matters
+- **Durations in config**:
+  - prefer a standard format (e.g. ISO 8601 durations like `PT15M`, `P1D`) or clearly documented units
+  - validate duration fields at config load time
+

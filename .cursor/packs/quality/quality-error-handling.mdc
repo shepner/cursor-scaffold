@@ -1,0 +1,21 @@
+---
+description: Error-handling quality bar (specific exceptions, context, cleanup).
+globs: ["**/*"]
+alwaysApply: false
+---
+
+## Error handling (quality bar)
+
+- **Don’t catch too broadly**:
+  - avoid bare `except:` / catch-all handlers unless you immediately rethrow after logging
+  - prefer specific exception types (or define domain-specific exceptions)
+- **Preserve context**:
+  - include relevant identifiers (request id, filename, record id)
+  - include stack traces for unexpected errors
+- **Cleanup matters**:
+  - ensure resources are cleaned up (files, temp dirs, locks, connections)
+  - prefer context managers / `finally` blocks for cleanup
+- **User-facing errors should be actionable**:
+  - message should say what failed and (if safe) what to do next
+  - avoid leaking secrets in error messages
+
