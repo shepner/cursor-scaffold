@@ -10,6 +10,10 @@ This is the **cursor-scaffold** project: **source-of-truth + tooling for Cursor 
 - **Bootstrap sink**: When adding content (anywhere) that would help bootstrap a new computer or project, add or update the corresponding artifact here (notes, packs, helpers). See [.cursor/notes/bootstrap-artifacts-sink.md](.cursor/notes/bootstrap-artifacts-sink.md). The hub enforces this via the rule **update-scaffold-with-bootstrap**.
 - **Subagents**: `.cursor/agents/` (project); for global setup see knowledge-hub’s `.cursor/notes/cursor-subagents.md` and `.cursor/agents/` Define as needed (like helpers). Copy to `~/.cursor/agents/` for use across all projects.
 
+## Triggering improvement
+
+Say "Document this workflow", "Take notes and improve", or "Add a rule for X"; the agent will create or update rules, skills, notes, or helpers in this project’s `.cursor/`. (When the hub is in the workspace, it may use the hub’s **document-and-improve-workflows** skill.)
+
 ## Current artifacts
 
 - Packs: `.cursor/packs/`
