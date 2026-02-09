@@ -1,6 +1,6 @@
 # Legacy `cursor-rules` salvage (into cursor-scaffold)
 
-This note captures what we salvaged from the old `/Users/shepner/local/cursor-rules` rule library and how it was translated into **cursor-scaffold**.
+This note captures what we salvaged from the old `cursor-rules` rule library (since archived/deleted) and how it was translated into **cursor-scaffold**.
 
 ## What we salvaged (principles → packs)
 
