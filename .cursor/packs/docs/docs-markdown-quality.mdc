@@ -1,0 +1,16 @@
+---
+description: Documentation and Markdown quality bar (clarity, structure, examples).
+globs: ["**/*.md", "**/*.mdc"]
+alwaysApply: false
+---
+
+## Docs quality bar
+
+- **Prefer concise structure**: headings, short sections, bullets over long paragraphs.
+- **Be concrete**: include examples/commands people can run; avoid vague guidance.
+- **Keep “what/why/how”**:
+  - what it does
+  - why it exists
+  - how to use it (minimal steps)
+- **Link or reference** the canonical source if it exists (README, ADR, upstream docs).
+

@@ -1,0 +1,20 @@
+---
+description: Baseline secure-coding expectations (secrets, input validation, logging).
+globs: ["**/*"]
+alwaysApply: false
+---
+
+## Security basics
+
+- **Secrets**:
+  - never commit secrets (API keys, tokens, private keys, `.env` with creds).
+  - don’t paste secrets into chat output; redact and explain where to put them.
+- **Input handling**:
+  - validate and normalize untrusted input.
+  - use parameterized queries; avoid string concatenation for SQL.
+- **Logging**:
+  - don’t log credentials, tokens, full auth headers, or sensitive payloads.
+  - log identifiers and high-level outcomes, not raw secrets.
+- **Dependencies**:
+  - prefer well-maintained libraries; keep versions current when adding new deps.
+

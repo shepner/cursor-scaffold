@@ -1,0 +1,17 @@
+---
+description: Python style expectations (readability, typing, structure).
+globs: ["**/*.py"]
+alwaysApply: false
+---
+
+## Python style + types
+
+- **Prefer readability over cleverness**; keep functions small and named for intent.
+- **Typing**:
+  - add type hints on new/changed public functions.
+  - use `Optional[T]`/`T | None` appropriately and handle `None` explicitly.
+- **Errors**:
+  - raise specific exceptions; include actionable messages.
+  - don’t swallow exceptions without logging or rethrowing.
+- **Imports**: keep ordered and minimal; avoid unused imports.
+

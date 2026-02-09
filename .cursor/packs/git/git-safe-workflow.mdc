@@ -1,0 +1,19 @@
+---
+description: Safe, non-destructive git workflow guidance (avoid force, avoid surprise commits).
+globs: ["**/*"]
+alwaysApply: false
+---
+
+## Git safety + workflow
+
+- **Never commit unless explicitly asked.**
+- **Before proposing a commit**: inspect `git status`, `git diff`, and recent `git log` to match repo style.
+- **Avoid destructive commands** unless explicitly requested:
+  - no `push --force`
+  - no `reset --hard`
+  - no history rewriting on shared branches
+- **Prefer small commits** with messages that explain the intent (“why”), not a file list.
+- **Branch discipline**:
+  - don’t work directly on `main`/`master` for substantial changes; create a branch.
+  - don’t assume the base branch; detect it.
+
