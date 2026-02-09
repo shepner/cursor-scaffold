@@ -8,6 +8,12 @@ This repo is the public-safe “scaffolding layer” you can sync across machine
 - helpers to **bootstrap** a project (`AGENTS.md` + `.cursor/` kit)
 - helpers to **install packs** into a target repo’s `.cursor/rules/`
 
+## Public publishing notes
+
+- **No secrets**: this repo should not contain tokens, credentials, or private keys.
+- **Avoid personal paths**: docs should use generic paths like `/path/to/repo`.
+- **Commit privacy**: if you publish, your git history may expose author name/email. Consider using a GitHub “noreply” email for future commits; rewrite history only if you explicitly want to scrub past metadata.
+
 ## What’s here
 
 - `.cursor/packs/`: curated rule packs (source material)
