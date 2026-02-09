@@ -7,11 +7,11 @@ alwaysApply: true
 # Self-documenting workflows
 
 This project uses Cursor to continually document and improve its own workflows.
-All Cursor-for-Cursor artifacts live under `.cursor/` (rules, skills, notes, helpers, packs).
+All Cursor-for-Cursor artifacts live under `.cursor/` (rules, skills, notes, helpers, agents, packs).
 
 ## When to document or improve
 
-- After a non-trivial or repeatable workflow, add/update a rule/skill/helper.
+- After a non-trivial or repeatable workflow, add/update a rule/skill/helper/subagent.
 - When you notice gaps or repeated friction, codify it.
 
 ## What to create or update
@@ -21,4 +21,5 @@ All Cursor-for-Cursor artifacts live under `.cursor/` (rules, skills, notes, hel
 - Skills: `.cursor/skills/<name>/SKILL.md`
 - Notes: `.cursor/notes/`
 - Helpers: `.cursor/helpers/`
+- Subagents: `.cursor/agents/` (project) or `~/.cursor/agents/` (user). Define as needed; clear descriptions enable automatic use. See knowledge-hub `.cursor/notes/cursor-subagents.md`.
 

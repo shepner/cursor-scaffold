@@ -29,11 +29,11 @@ SELF_DOCUMENT_RULE = """\
 # Self-documenting workflows
 
 This project uses Cursor to continually document and improve its own workflows.
-All Cursor-for-Cursor artifacts live under `.cursor/` (rules, skills, notes, helpers).
+All Cursor-for-Cursor artifacts live under `.cursor/` (rules, skills, notes, helpers, agents).
 
 ## When to document or improve
 
-- After a non-trivial or repeatable workflow, add/update a rule/skill/helper.
+- After a non-trivial or repeatable workflow, add/update a rule/skill/helper/subagent.
 - When you notice gaps or repeated friction, codify it.
 
 ## What to create or update
@@ -42,12 +42,13 @@ All Cursor-for-Cursor artifacts live under `.cursor/` (rules, skills, notes, hel
 - Skills: `.cursor/skills/<name>/SKILL.md`
 - Notes: `.cursor/notes/`
 - Helpers: `.cursor/helpers/`
+- Subagents: `.cursor/agents/` (project) or `~/.cursor/agents/` (user). Define as needed when context-isolated or repeatable delegation would help. Clear descriptions enable automatic use.
 """
 
 CURSOR_DIR_README = """\
 # Cursor artifacts
 
-This directory is for Cursor-for-Cursor artifacts (rules, helpers, notes, skills).
+This directory is for Cursor-for-Cursor artifacts (rules, helpers, notes, skills, agents).
 """
 
 CURSOR_SUBDIR_README = """\
@@ -75,6 +76,16 @@ Use `--enable-packs` to flip `alwaysApply: true` for installed packs.
 """
 
 
+AGENTS_README = """\
+# Subagents (project-level)
+
+Project-level subagents for this repo. Agent uses them when descriptions match the task.
+
+- **Global subagents**: Copy from or see the knowledge-hub repo `.cursor/agents/` and `.cursor/notes/cursor-subagents.md` for templates and user-level (`~/.cursor/agents/`) setup.
+- **Define as needed**: Like helpers—when repeatable delegation would help, add a `.md` file here with clear YAML frontmatter and description.
+"""
+
+
 def agents_md_template(project_name: str) -> str:
     return f"""\
 # Cursor agent in this project
@@ -83,12 +94,13 @@ This is the **{project_name}** project. Cursor is expected to **document and imp
 
 ## How the agent should work
 
-- Keep Cursor-for-Cursor artifacts under `.cursor/` (rules, skills, notes, helpers).
-- After non-trivial or repeatable workflows, add a rule/skill/helper so future sessions improve.
+- Keep Cursor-for-Cursor artifacts under `.cursor/` (rules, skills, notes, helpers, agents).
+- After non-trivial or repeatable workflows, add a rule/skill/helper/subagent so future sessions improve.
 
 ## Current artifacts
 
 - Rule: `.cursor/rules/self-document-workflows.mdc`
+- Subagents: `.cursor/agents/` (optional; see README there and knowledge-hub for templates)
 """
 
 
@@ -167,6 +179,7 @@ def main(argv: list[str]) -> int:
     cursor_helpers = cursor_dir / "helpers"
     cursor_notes = cursor_dir / "notes"
     cursor_skills = cursor_dir / "skills"
+    cursor_agents = cursor_dir / "agents"
 
     actions: list[Action] = []
 
@@ -175,7 +188,7 @@ def main(argv: list[str]) -> int:
         actions.append(Action(description="Initialize git repo", command=["git", "init"]))
 
     # Create .cursor skeleton
-    for p in (cursor_rules, cursor_helpers, cursor_notes, cursor_skills):
+    for p in (cursor_rules, cursor_helpers, cursor_notes, cursor_skills, cursor_agents):
         if not p.exists():
             actions.append(Action(description=f"Create directory {p.relative_to(project_dir)}", path=p))
 
@@ -194,6 +207,15 @@ def main(argv: list[str]) -> int:
                     write_text=CURSOR_SUBDIR_README,
                 )
             )
+    agents_readme = cursor_agents / "README.md"
+    if cursor_agents.exists() and not agents_readme.exists():
+        actions.append(
+            Action(
+                description="Create .cursor/agents/README.md",
+                path=agents_readme,
+                write_text=AGENTS_README,
+            )
+        )
 
     # self-document rule
     rule_path = cursor_rules / "self-document-workflows.mdc"
