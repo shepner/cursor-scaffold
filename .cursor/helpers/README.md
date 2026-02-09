@@ -2,6 +2,22 @@
 
 Runnable scripts for applying cursor-scaffold to projects.
 
+## New machine and importing projects
+
+- **Bootstrap a new computer**: see [.cursor/notes/bootstrap-new-machine.md](../notes/bootstrap-new-machine.md) for full setup (clone hub + cursor-scaffold, layout, open workspace).
+- **Import an existing project** into the hub structure: see [.cursor/notes/importing-projects.md](../notes/importing-projects.md). Then run `bootstrap-project.py` (or use `prepare-project-for-hub.sh` below) on the project path.
+
+## prepare-project-for-hub.sh
+
+Convenience wrapper to prepare one project for the hub: runs bootstrap and prints next steps.
+
+```bash
+./.cursor/helpers/prepare-project-for-hub.sh /path/to/project --apply
+./.cursor/helpers/prepare-project-for-hub.sh /path/to/project --install-packs core git --apply
+```
+
+Without `--apply`, shows a dry run. All extra args are passed to `bootstrap-project.py`.
+
 ## bootstrap-project.py
 
 Bootstrap a project directory so Cursor can “document and learn” consistently:

@@ -20,6 +20,14 @@ This repo is the public-safe “scaffolding layer” you can sync across machine
 - `.cursor/helpers/`:
   - `bootstrap-project.py`: create a minimal Cursor-ready project skeleton
   - `install_cursor_packs.py`: copy selected packs into a target repo
+  - `prepare-project-for-hub.sh`: run bootstrap on a project and show hub-import next steps
+- `.cursor/notes/`:
+  - `bootstrap-new-machine.md`: how to set up a new computer for the knowledge-hub methodology (layout, clone hub + scaffold, open workspace)
+  - `importing-projects.md`: how to import existing projects into the hub structure (where to put them, bootstrap, optional workspace roots)
+
+## New computer setup
+
+To bootstrap a new machine: see [.cursor/notes/bootstrap-new-machine.md](.cursor/notes/bootstrap-new-machine.md) for prerequisites, directory layout, and steps. To import an existing project into the hub structure, see [.cursor/notes/importing-projects.md](.cursor/notes/importing-projects.md); then run the bootstrap helper or `prepare-project-for-hub.sh` on the project path.
 
 ## Typical usage
 
@@ -27,6 +35,12 @@ Bootstrap a repo:
 
 ```bash
 python3 .cursor/helpers/bootstrap-project.py /path/to/repo --apply
+```
+
+Prepare a project for the hub (bootstrap + next-step reminder):
+
+```bash
+./.cursor/helpers/prepare-project-for-hub.sh /path/to/repo --apply
 ```
 
 Install packs into a repo:
