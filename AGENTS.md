@@ -7,6 +7,7 @@ This is the **cursor-scaffold** project: **source-of-truth + tooling for Cursor 
 - Keep Cursor-for-Cursor artifacts under `.cursor/` (rules, skills, notes, helpers).
 - Prefer **small, opt-in packs** over large always-on rule sets.
 - Treat packs as **source material**; Cursor only executes rules in a repo’s `.cursor/rules/`.
+- **Subagents**: For global (user-level) subagents and auto-delegation, see the knowledge-hub repo’s `.cursor/notes/cursor-subagents.md` and `.cursor/agents/` (e.g. verifier). Copy desired agents to `~/.cursor/agents/` for use across all projects.
 
 ## Current artifacts
 
