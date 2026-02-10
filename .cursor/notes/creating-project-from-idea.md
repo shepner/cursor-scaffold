@@ -2,6 +2,10 @@
 
 When you **create or expand a project** from an idea that originated elsewhere (e.g. a note in an Obsidian vault, another repo in the workspace), keep the new project **self-contained** so it can be moved or cloned later.
 
+## Placement
+
+- Put the new project in the container’s **projects/** subfolder: `personal/projects/ProjectName` or `work/projects/ProjectName`, not directly under the container root. See [importing-projects](importing-projects.md) “Where projects live”.
+
 ## Do not edit the source root
 
 - Do not edit files in the vault (or other root) unless the user explicitly asks. Do not add a "Project" section or link there pointing to the new project.

@@ -4,10 +4,12 @@ How to bring an existing project (already on this machine or cloned from elsewhe
 
 ## Where projects live
 
-In the typical layout, projects sit inside **container** roots that are already in the workspace:
+In the typical layout, projects sit inside **container** roots that are already in the workspace. **Place new or imported projects in the container’s `projects/` subfolder:**
 
-- **Personal projects**: e.g. `~/local/personal/projects/MyApp` or `~/local/personal/MyApp`
-- **Work projects**: e.g. `~/local/work/projects/ClientX` or `~/local/work/ClientX`
+- **Personal projects**: `~/local/personal/projects/MyApp` (preferred; do not create new projects as `personal/MyApp`)
+- **Work projects**: `~/local/work/projects/ClientX` (preferred; do not create new projects as `work/ClientX`)
+
+This keeps all project repos under `container/projects/` and the container root for that root’s own config (e.g. `.cursor/`, `AGENTS.md`, `_workspaces/`). Existing projects already directly under the container can remain where they are.
 
 Because the workspace has a root for `personal` and `work`, Cursor **already indexes everything under those folders**. You do **not** need to add each project as its own workspace root unless you want a dedicated workspace (e.g. “Hub + this one project”) or a custom sidebar name.
 
@@ -19,14 +21,15 @@ So “importing” means:
 
 ## Step 1: Place the project
 
-**Option A — Move or copy into the container**
+**Option A — Move or copy into the container’s projects folder**
 
 ```bash
 # Example: move existing repo into personal projects
+mkdir -p ~/local/personal/projects
 mv ~/old-location/MyApp ~/local/personal/projects/MyApp
 ```
 
-**Option B — Clone into the container**
+**Option B — Clone into the container’s projects folder**
 
 ```bash
 mkdir -p ~/local/personal/projects
