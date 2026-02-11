@@ -1,0 +1,33 @@
+---
+description: Recognize multiple independent asks and spawn subagents when appropriate; always summarize afterward.
+globs: []
+alwaysApply: false
+---
+
+# Multi-ask detection and subagent delegation
+
+When the user's message contains **multiple independent, likely unrelated asks**, consider spawning subagents to parallelize work and speed things up.
+
+## When to split and delegate
+
+1. **Identify discrete asks** — e.g. "do X, Y, and Z" where X, Y, Z can be done independently.
+2. **Match to subagents** — Check available subagents (verifier, debugger, test-runner, cross-root-editor, documenter). If an ask fits a subagent's description, delegate it.
+3. **Parallel when possible** — Multiple subagents can run in parallel. Don't serialize work that doesn't depend on each other.
+4. **Main agent handles the rest** — Tasks that don't match a subagent, or that orchestrate the flow, stay with the main agent.
+
+## When not to delegate
+
+- Single cohesive task — splitting would add overhead without benefit.
+- Dependent tasks — if Y needs X's output, keep in one flow.
+- No matching subagent — if no subagent fits, do the work in the main agent (and consider adding a subagent later if the pattern repeats).
+
+## After subagent work
+
+**Always provide a concise summary** so the user knows what happened without reading each subagent thread:
+
+- What was delegated and to whom
+- Key results (pass/fail, findings, deliverables)
+- Any follow-up needed
+- What the main agent did in parallel
+
+See also: scaffold note `user-preferences-and-seamless-extension.md`; knowledge-hub has `.cursor/notes/cursor-subagents.md` and full rule.

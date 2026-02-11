@@ -16,7 +16,7 @@ Say "Document this workflow", "Take notes and improve", or "Add a rule for X"; t
 
 ## Current artifacts
 
-- Packs: `.cursor/packs/`
+- Packs: `.cursor/packs/` (including **agent-behavior** for multi-ask delegation; core, git, docker, docs, quality, security, testing, time)
 - Subagents: `.cursor/agents/` (see README there; templates in knowledge-hub)
 - Helpers:
   - `.cursor/helpers/bootstrap-project.py` — bootstrap a project (AGENTS.md, .cursor/, git)
@@ -28,6 +28,7 @@ Say "Document this workflow", "Take notes and improve", or "Add a rule for X"; t
   - `.cursor/notes/external-context-for-projects.md` — pattern for giving projects access to context in another repo (infra, shared docs); summary + optional workspace variant
   - `.cursor/notes/bootstrap-artifacts-sink.md` — scaffold is the place for bootstrap-useful content; when adding such content elsewhere, add it here too (hub rule: update-scaffold-with-bootstrap)
   - `.cursor/notes/creating-project-from-idea.md` — when creating a project from an idea in another root: don't edit that root; keep project self-contained; no cross-project links
-  - `.cursor/notes/multi-ask-and-subagent-delegation.md` — recognize multiple independent asks; delegate to subagents when appropriate; summarize afterward (hub has full rule)
+  - `.cursor/notes/multi-ask-and-subagent-delegation.md` — recognize multiple independent asks; delegate to subagents when appropriate; summarize afterward (hub has full rule; install `agent-behavior` pack for rule)
+  - `.cursor/notes/user-preferences-and-seamless-extension.md` — pattern for operating as seamless extension, learning from user patterns, evolving with needs (hub has instance)
 - Rule: `.cursor/rules/self-document-workflows.mdc`
 

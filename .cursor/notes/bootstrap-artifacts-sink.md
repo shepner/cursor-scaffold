@@ -18,8 +18,8 @@ The knowledge hub has a rule **update-scaffold-with-bootstrap**: when adding con
 |------|----------|---------|
 | New-machine steps / layout | `.cursor/notes/bootstrap-new-machine.md` or new note | MCP, Cursor settings |
 | Project import / bootstrap steps | `.cursor/notes/importing-projects.md`, `.cursor/helpers/` | bootstrap-project.py |
-| Reusable pattern (any context) | `.cursor/notes/*.md` | external-context-for-projects.md |
-| Optional project rules | `.cursor/packs/<name>/` | core, git, docker, docs |
+| Reusable pattern (any context) | `.cursor/notes/*.md` | external-context-for-projects.md, user-preferences-and-seamless-extension.md, multi-ask-and-subagent-delegation.md |
+| Optional project rules | `.cursor/packs/<name>/` | core, git, docker, docs, agent-behavior |
 | Scripts for bootstrap or install | `.cursor/helpers/` | install_cursor_packs.py, prepare-project-for-hub.sh |
 
 Always update **AGENTS.md** when you add a new note, pack, or helper.

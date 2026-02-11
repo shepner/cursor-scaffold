@@ -16,6 +16,7 @@ Notes:
 ## Packs included
 
 - **core**: baseline agent behavior (honesty, repo-first, safety)
+- **agent-behavior**: multi-ask detection, subagent delegation, post-work summary
 - **git**: safe git workflow expectations (no surprise commits, avoid destructive ops)
 - **security**: secrets + basic secure-coding defaults
 - **docs**: documentation quality bar for markdown/docs changes

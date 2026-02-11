@@ -15,6 +15,7 @@ When the user gives **multiple independent, likely unrelated asks** in one messa
 - Dependent tasks (Y needs X's output)
 - No matching subagent (do the work in main agent; consider adding a subagent if the pattern repeats)
 
-## Source
+## How to adopt
 
-The knowledge hub has a full rule: `.cursor/rules/multi-ask-and-subagent-delegation.mdc`. Projects can adopt this pattern via a rule or by referencing the hub when in a multi-root workspace.
+- **Install the pack**: `python3 .cursor/helpers/install_cursor_packs.py --target /path/to/repo --packs agent-behavior` (optionally `--enable agent-behavior` for always-on).
+- **Knowledge hub**: Has the full rule at `.cursor/rules/multi-ask-and-subagent-delegation.mdc` (always-on). Projects in the hub workspace inherit this behavior.
