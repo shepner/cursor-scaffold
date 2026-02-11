@@ -28,5 +28,6 @@ Say "Document this workflow", "Take notes and improve", or "Add a rule for X"; t
   - `.cursor/notes/external-context-for-projects.md` — pattern for giving projects access to context in another repo (infra, shared docs); summary + optional workspace variant
   - `.cursor/notes/bootstrap-artifacts-sink.md` — scaffold is the place for bootstrap-useful content; when adding such content elsewhere, add it here too (hub rule: update-scaffold-with-bootstrap)
   - `.cursor/notes/creating-project-from-idea.md` — when creating a project from an idea in another root: don't edit that root; keep project self-contained; no cross-project links
+  - `.cursor/notes/multi-ask-and-subagent-delegation.md` — recognize multiple independent asks; delegate to subagents when appropriate; summarize afterward (hub has full rule)
 - Rule: `.cursor/rules/self-document-workflows.mdc`
 
