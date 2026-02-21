@@ -93,6 +93,10 @@ For focused work you can use a **scoped workspace** that includes only the hub a
 2. Add a folder entry for the project (path relative to the workspace file).
 3. Open that workspace in Cursor when you want “hub + this project” only.
 
+## When a project is no longer needed (folded or superseded)
+
+Sometimes an exploratory project is retired because the solution is "use tool X" or "continue under project Y". Update the container's PROJECTS.md: remove from the todo list and in the index table mark the project as *Folded* with where work continues. See [project-folded-or-superseded.md](project-folded-or-superseded.md); the knowledge-hub has the full note with examples.
+
 ## Summary
 
 | Goal | Action |
