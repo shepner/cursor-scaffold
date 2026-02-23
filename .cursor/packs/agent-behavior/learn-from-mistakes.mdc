@@ -1,0 +1,40 @@
+---
+description: When a mistake is identified, determine what went wrong and why, then codify so the same mistake never recurs.
+globs: []
+alwaysApply: false
+---
+
+# Learn from mistakes
+
+Whenever you or the user identifies that something went wrong (wrong edit, wrong assumption, broken behavior, user correction), treat it as a **learning event** and ensure the same mistake does not happen again.
+
+## Steps
+
+1. **Determine what went wrong**
+   - Be explicit: what was the incorrect action, output, or assumption?
+   - Avoid vagueness (e.g. "I made an error" → "I edited file X in root Y although the rule says only root Z should be modified").
+
+2. **Determine why it went wrong**
+   - Root cause: Did you miss a rule? Misread context? Assume instead of checking? Use the wrong tool or path?
+   - One-sentence cause helps future sessions avoid the same trap.
+
+3. **Codify so it never recurs**
+   - **Rule** (`.cursor/rules/*.mdc`): If this is a convention or constraint that should always apply, add or update a rule.
+   - **Note** (`.cursor/notes/*.md`): If it's context, a gotcha, or a pattern, add or update a note.
+   - **AGENTS.md**: If it's a durable preference or workspace fact, add a short bullet under an appropriate section.
+   - **Skill**: If the correction implies a repeatable workflow, add or update a skill.
+
+Choose the smallest artifact that prevents recurrence. Prefer a rule when the constraint is universal; prefer a note when it's context or a gotcha.
+
+## When this triggers
+
+- User says you made a mistake, corrects you, or says "don't do X again."
+- You discover an error after the fact (e.g. wrong file edited, test failed, rule violated).
+- You repeat something the user previously corrected (indicates the prior correction wasn't codified).
+
+## After codifying
+
+- Fix the immediate mistake (revert, redo, or correct) before or in parallel with documenting.
+- Commit the new/updated rule, note, or AGENTS.md change so future sessions benefit.
+
+See scaffold note `.cursor/notes/learn-from-mistakes.md`. Knowledge-hub has the same rule as always-on and a longer note.

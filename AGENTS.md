@@ -16,7 +16,7 @@ Say "Document this workflow", "Take notes and improve", or "Add a rule for X"; t
 
 ## Current artifacts
 
-- Packs: `.cursor/packs/` (including **agent-behavior** for multi-ask delegation; core, git, docker, docs, quality, security, testing, time)
+- Packs: `.cursor/packs/` (including **agent-behavior** for multi-ask delegation and learn-from-mistakes; core, git, docker, docs, quality, security, testing, time)
 - Subagents: `.cursor/agents/` (see README there; templates in knowledge-hub)
 - Helpers:
   - `.cursor/helpers/bootstrap-project.py` — bootstrap a project (AGENTS.md, .cursor/, git)
@@ -30,6 +30,7 @@ Say "Document this workflow", "Take notes and improve", or "Add a rule for X"; t
   - `.cursor/notes/creating-project-from-idea.md` — when creating a project from an idea in another root: don't edit that root; keep project self-contained; no cross-project links
   - `.cursor/notes/multi-ask-and-subagent-delegation.md` — recognize multiple independent asks; delegate to subagents when appropriate; summarize afterward (hub has full rule; install `agent-behavior` pack for rule)
   - `.cursor/notes/user-preferences-and-seamless-extension.md` — pattern for operating as seamless extension, learning from user patterns, evolving with needs (hub has instance)
+  - `.cursor/notes/learn-from-mistakes.md` — when a mistake is identified: what went wrong, why, codify so it never recurs (rule in agent-behavior pack)
   - `.cursor/notes/project-folded-or-superseded.md` — when a project is retired (tool decision or folded into another); update PROJECTS.md (hub has full note)
 - Rule: `.cursor/rules/self-document-workflows.mdc`
 
