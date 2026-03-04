@@ -20,4 +20,12 @@ Each iteration makes the scripts better. Manual review catches fewer novel issue
 4. **Close the loop**: when a mismatch is found, update scripts + add test case + commit.
 5. **Measure the trend**: fewer misclassifications over time = feedback loop is working.
 
+## Broader pattern: expert review as feedback mechanism
+
+This same feedback loop applies at the role level in multi-agent systems. An expert reviewer role (e.g. Security Architect) that reviews but does not implement creates the same cycle:
+
+- Other roles do work → expert reviews → findings become actionable tickets + educational commentary → other roles learn and adjust → future work improves → fewer findings over time.
+
+The expert's value isn't just finding problems — it's explaining *why* things matter so the implementing roles internalize the principles. The reduction in findings over time is the measure of maturity.
+
 See the hub's `.cursor/notes/detection-maturity-feedback-loop.md` for the full version with framework connections.
