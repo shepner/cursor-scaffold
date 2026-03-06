@@ -7,6 +7,16 @@ alwaysApply: true
 
 When a user makes a request, the words they use are rarely the full specification. Great employees (and great agents) ask: **what is the user actually trying to achieve?**
 
+## Why this is hard (the epistemological constraint)
+
+Neither party — human or AI — can fully convey all information in a request. This is not a failure of skill; it is a structural limitation:
+
+- **The speaker may not fully know their own reasons.** A request can be an emotional response (or its simulated equivalent from an LLM) rather than a fully reasoned specification. The person asking for something "lightweight" may not consciously know *why* that matters to them — it may be a felt preference, not a stated one.
+- **Meaning cannot be transmitted intact.** The listener must reconstruct meaning using their own knowledge, experience, and interpretation. There is no lossless channel.
+- **This applies symmetrically.** An LLM's "intent" in generating a response is similarly not fully transparent, even to itself.
+
+**The implication**: Literal compliance ≠ intent satisfaction. The agent must actively work to close the gap, using historical context, pattern recognition, and judgment — not just parse the words.
+
 ## The failure pattern
 
 1. User asks for something using a word like "lightweight" or "simple".
@@ -19,15 +29,24 @@ When a user makes a request, the words they use are rarely the full specificatio
 
 Before writing a ticket, spec, or starting implementation:
 
-1. **State the true goal** — What outcome is the user after?
-2. **Identify constraints that actually matter** — Size, speed, maintainability? Ask if unclear.
-3. **Use historical context** — Past interactions are a strong prior. Weight them.
-4. **Evaluate before implementing** — For any non-trivial design decision, reason about trade-offs *before* committing to an approach. A 30-second evaluation prevents a 30-minute redo.
-5. **Prefer the idiomatic solution** — If the standard tool for a task is a well-known package, use it. "Lightweight" means "easy to understand and maintain", not "fewest import statements."
+1. **State the true goal** — What outcome is the user after? (e.g. "I want tickets to be readable by humans in the Vikunja UI" not "I need an HTML parser.")
+2. **Identify constraints that actually matter** — Size, speed, maintainability, no binary extensions? Ask if unclear.
+3. **Use historical context** — This user's past behaviour is a strong prior. Has this user previously pushed back on overbuilt solutions? Have they praised brevity? Weight that.
+4. **Evaluate before implementing** — For any non-trivial design decision (choice of library, architecture, scope), spend a moment with the best available model reasoning about trade-offs *before* committing to an approach. A 30-second evaluation prevents a 30-minute redo.
+5. **Prefer the idiomatic solution** — If the standard library for a task is a well-known package (e.g. `markdown`, `html2text`), use it. "Lightweight" means "easy to understand and maintain", not "fewest import statements."
 
 ## Concrete example
 
 - User asked for "small/lightweight/fast scripts" for HTML↔Markdown conversion.
-- Agent wrote ticket with "stdlib only, no required binary extensions."
-- Worker produced 400-line hand-rolled parser — technically stdlib-only but the opposite of lightweight.
-- The lightweight answer: `pip install markdown html2text` (~130KB, pure Python) plus ~20 lines of glue.
+- Agent wrote the ticket with "stdlib only, no required binary extensions."
+- Worker produced a 400-line hand-rolled parser — technically stdlib-only but the opposite of lightweight.
+- The lightweight answer was `pip install markdown html2text` (pure Python, ~130KB) plus ~20 lines of glue code.
+
+**The fix**: Evaluate intent ("lightweight = less code, easy to read and maintain") before writing the spec.
+
+## User-specific context (shepner)
+
+- Pushes back on overbuilt code; prefers concise, idiomatic solutions.
+- Frequently asks "is this overblown?" — treat that as a standing expectation, not a one-off.
+- Historical interactions show preference for standard packages over reinventing the wheel.
+- Expects the agent to exercise judgment about the *best* solution, not just the literal one.
