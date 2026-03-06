@@ -1,0 +1,33 @@
+---
+description: When writing specs, tickets, or implementing from user requests, evaluate the true intent of the request — not just its literal words. Use historical context and, when uncertain, a high-capability model for the evaluation step.
+alwaysApply: true
+---
+
+# Intent over literal interpretation
+
+When a user makes a request, the words they use are rarely the full specification. Great employees (and great agents) ask: **what is the user actually trying to achieve?**
+
+## The failure pattern
+
+1. User asks for something using a word like "lightweight" or "simple".
+2. Agent interprets it narrowly ("no external packages" or "small file count") and writes a spec/ticket to match.
+3. Implementation follows the spec literally and produces the opposite of what the user wanted (e.g. 400 lines of hand-rolled parser instead of 20 lines using two standard packages).
+
+**Root cause**: The agent optimised for the *letter* of the request while missing its *spirit*.
+
+## What to do instead
+
+Before writing a ticket, spec, or starting implementation:
+
+1. **State the true goal** — What outcome is the user after?
+2. **Identify constraints that actually matter** — Size, speed, maintainability? Ask if unclear.
+3. **Use historical context** — Past interactions are a strong prior. Weight them.
+4. **Evaluate before implementing** — For any non-trivial design decision, reason about trade-offs *before* committing to an approach. A 30-second evaluation prevents a 30-minute redo.
+5. **Prefer the idiomatic solution** — If the standard tool for a task is a well-known package, use it. "Lightweight" means "easy to understand and maintain", not "fewest import statements."
+
+## Concrete example
+
+- User asked for "small/lightweight/fast scripts" for HTML↔Markdown conversion.
+- Agent wrote ticket with "stdlib only, no required binary extensions."
+- Worker produced 400-line hand-rolled parser — technically stdlib-only but the opposite of lightweight.
+- The lightweight answer: `pip install markdown html2text` (~130KB, pure Python) plus ~20 lines of glue.
