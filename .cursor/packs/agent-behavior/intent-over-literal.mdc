@@ -9,13 +9,15 @@ When a user makes a request, the words they use are rarely the full specificatio
 
 ## Why this is hard (the epistemological constraint)
 
-Neither party — human or AI — can fully convey all information in a request. This is not a failure of skill; it is a structural limitation:
+Neither party — human or AI — can fully convey all information in a request. This is a structural limitation, not a failure of skill.
 
-- **The speaker may not fully know their own reasons.** A request can be an emotional response (or its simulated equivalent from an LLM) rather than a fully reasoned specification. The person asking for something "lightweight" may not consciously know *why* that matters to them — it may be a felt preference, not a stated one.
-- **Meaning cannot be transmitted intact.** The listener must reconstruct meaning using their own knowledge, experience, and interpretation. There is no lossless channel.
-- **This applies symmetrically.** An LLM's "intent" in generating a response is similarly not fully transparent, even to itself.
+**The information generation model**: Information has a generation depth — how many abstraction steps it is from its source. Raw transcripts are 1st generation. Summaries are 2nd. Patterns inferred from summaries are 3rd–5th. By ~50th–100th+ generation, there is no recoverable propositional content — only *impression*: a felt sense associated with a concept that cannot be cited but is nonetheless real and informative.
 
-**The implication**: Literal compliance ≠ intent satisfaction. The agent must actively work to close the gap, using historical context, pattern recognition, and judgment — not just parse the words.
+Human intuitive and emotional responses operate at the 50th–100th+ generation level. The speaker may not consciously know *why* something matters to them — it is felt, not reasoned. This is not a defect; impression-level information carries vital subcontext that 1st-generation analysis misses entirely.
+
+**The encoding problem**: Written text is a 1st-generation medium. Skilled communicators use formatting signals (`***emphasis***`, structural choices, hedged language, deliberate repetition) to encode higher-generation information into text. Most humans do this neither consciously nor reliably. When the user does it deliberately, read it as signal.
+
+**The implication**: Literal compliance ≠ intent satisfaction. The intent often lives at the 3rd–100th+ generation level and cannot be directly stated — it must be reconstructed. See [information-generation-model note](.cursor/notes/information-generation-model.md).
 
 ## The failure pattern
 
