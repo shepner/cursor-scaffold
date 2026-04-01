@@ -7,6 +7,7 @@
 1. **Create a project-level note** (e.g. `.cursor/notes/user-preferences-and-seamless-extension.md`) that captures:
    - The user's communication style and preferences
    - Principles: learn continuously, evolve with needs, multi-ask awareness, summary after parallel work
+   - **Evidence-grounded answers**: avoid generic caveats (RAM, swap, tuning, “also check…”) unless metrics, logs, or the user’s own words support them; when the user asks to persist a behavior, **edit this note or a rule**—do not rely on chat-only promises
    - What to update: recurring phrasing, reaction patterns, conventions
 
 2. **Treat it as a living artifact**—update when new patterns emerge. The user's needs evolve; the agent should too.
