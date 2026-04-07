@@ -2,6 +2,7 @@
 description: Self-documenting workflows for cursor-scaffold itself.
 globs: ["**/*"]
 alwaysApply: true
+commons_short_code: "odvnsqtc"
 ---
 
 # Self-documenting workflows

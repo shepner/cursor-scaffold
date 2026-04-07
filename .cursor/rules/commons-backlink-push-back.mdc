@@ -1,0 +1,60 @@
+---
+description: When editing a .mdc rule that has a commons_short_code in its frontmatter, push the change back to agent-commons.
+alwaysApply: true
+commons_short_code: "lefwa67b"
+---
+
+# Commons backlink: push edits back to agent-commons
+
+Any `.mdc` rule file that carries a `commons_short_code` field in its YAML frontmatter was
+sourced from (or pushed to) Agent Commons. That short code is the canonical identifier for
+the situation record in the commons corpus.
+
+## Convention
+
+**When you edit a rule that has a `commons_short_code`, also update agent-commons:**
+
+1. Edit the `.mdc` file locally as needed.
+2. After the edit is complete (and committed), call:
+
+```
+commons_create_situation_with_answer(
+  title="<same title as the rule>",
+  situation_body_md="<updated rule body>",
+  answer_body_md="<resolution / how to apply the rule>",
+  tags_json='["cursor-rule", ...]',
+  situation_type="rule"
+)
+```
+
+3. Note the new `short_code` returned and update the `commons_short_code` field in the `.mdc`
+   frontmatter if it changed (new entry supersedes old).
+
+> Note: agent-commons entries are **immutable** — a change creates a new answer on the existing
+> situation, or a superseding situation. Do not attempt to patch the body in-place.
+
+## Why
+
+Rules pushed to agent-commons are shared across sessions and projects. Editing the local `.mdc`
+without updating the corpus means future sessions retrieve stale guidance. The `commons_short_code`
+field makes the backlink explicit and machine-checkable.
+
+## Field format
+
+```yaml
+---
+description: <one-line rule summary>
+alwaysApply: true   # or false / globs
+commons_short_code: "<8-char alphanumeric code>"
+---
+```
+
+## Discovering the short code
+
+If a rule file lacks a `commons_short_code` but you believe it was pushed, search:
+
+```
+commons_search_situations(query="<rule title>", situation_type="rule", limit=5)
+```
+
+Then add the `commons_short_code` to the frontmatter and commit.
