@@ -26,6 +26,10 @@ Whenever you or the user identifies that something went wrong (wrong edit, wrong
 
 Choose the smallest artifact that prevents recurrence. Prefer a rule when the constraint is universal; prefer a note when it's context or a gotcha.
 
+## Trust but verify
+
+Claims from **people**, **summaries**, or **automated output** (scripts, pipelines, chat) are hypotheses until confirmed. Check **primary evidence**: current files on disk, authoritative logs or CI run pages, API responses, exit codes, and repeatable commands—not only what you were told or what a wrapper printed. Example: if a job is reported as failed, inspect the run log or artifact state before concluding it actually failed.
+
 ## When this triggers
 
 - User says you made a mistake, corrects you, or says "don't do X again."

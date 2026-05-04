@@ -6,6 +6,8 @@ When the agent (or user) identifies a mistake, the agent should:
 2. **Why it went wrong** — One-sentence root cause (missed rule, wrong context, wrong tool).
 3. **Codify** — Add or update a rule, note, AGENTS.md bullet, or skill so the same mistake never recurs.
 
+**Trust but verify** — The pack rule also asks you to confirm factual claims against primary evidence (files, logs, APIs, CI), not only human or tool assertions, before relying on them.
+
 This is available as a rule in the **agent-behavior** pack: `learn-from-mistakes.mdc`. Install with:
 
 ```bash
