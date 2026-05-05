@@ -4,7 +4,7 @@ When the agent (or user) identifies a mistake, the agent should:
 
 1. **What went wrong** — State the incorrect action/assumption explicitly.
 2. **Why it went wrong** — One-sentence root cause (missed rule, wrong context, wrong tool).
-3. **Codify** — Add or update a rule, note, AGENTS.md bullet, or skill so the same mistake never recurs.
+3. **Codify** — Add or update a rule, note, `AGENTS.md` bullet, or skill so the same mistake never recurs. If incorrect guidance was stored in **agent-commons**, push a **superseding answer** when MCP is available (`commons_create_situation_with_answer`); see agent-commons docs for immutability.
 
 **Trust but verify** — The pack rule also asks you to confirm factual claims against primary evidence (files, logs, APIs, CI), not only human or tool assertions, before relying on them.
 

@@ -23,6 +23,7 @@ Whenever you or the user identifies that something went wrong (wrong edit, wrong
    - **Note** (`.cursor/notes/*.md`): If it's context, a gotcha, or a pattern, add or update a note.
    - **AGENTS.md**: If it's a durable preference or workspace fact, add a short bullet under an appropriate section.
    - **Skill**: If the correction implies a repeatable workflow, add or update a skill.
+   - **Agent commons** (optional; knowledge-hub and orgs that use the corpus): If the wrong answer was **stored in agent-commons**, push a **new answer** (supersede per product rules); do not leave the stale entry as the only resolution.
 
 Choose the smallest artifact that prevents recurrence. Prefer a rule when the constraint is universal; prefer a note when it's context or a gotcha.
 

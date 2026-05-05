@@ -30,7 +30,7 @@ Say "Document this workflow", "Take notes and improve", or "Add a rule for X"; t
   - `.cursor/notes/creating-project-from-idea.md` — when creating a project from an idea in another root: don't edit that root; keep project self-contained; no cross-project links
   - `.cursor/notes/multi-ask-and-subagent-delegation.md` — recognize multiple independent asks; delegate to subagents when appropriate; summarize afterward (hub has full rule; install `agent-behavior` pack for rule)
   - `.cursor/notes/user-preferences-and-seamless-extension.md` — pattern for operating as seamless extension, learning from user patterns, evolving with needs (hub has instance)
-  - `.cursor/notes/learn-from-mistakes.md` — when a mistake is identified: what went wrong, why, codify so it never recurs (rule in agent-behavior pack)
+  - `.cursor/notes/learn-from-mistakes.md` — when a mistake is identified: what went wrong, why, codify so it never recurs; if the wrong guidance was stored in **agent-commons**, push a superseding answer when MCP is available (hub: `.cursor/notes/agent-commons-corrections.md`)
   - `.cursor/notes/project-folded-or-superseded.md` — when a project is retired (tool decision or folded into another); update PROJECTS.md (hub has full note)
 - Rule: `.cursor/rules/self-document-workflows.mdc`
 
