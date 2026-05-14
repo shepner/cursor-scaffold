@@ -33,5 +33,6 @@ Say "Document this workflow", "Take notes and improve", or "Add a rule for X"; t
   - `.cursor/notes/user-preferences-and-seamless-extension.md` — pattern for operating as seamless extension, learning from user patterns, evolving with needs (hub has instance)
   - `.cursor/notes/learn-from-mistakes.md` — when a mistake is identified: what went wrong, why, codify so it never recurs; if the wrong guidance was stored in **agent-commons**, push a superseding answer when MCP is available (hub: `.cursor/notes/agent-commons-corrections.md`)
   - `.cursor/notes/project-folded-or-superseded.md` — when a project is retired (tool decision or folded into another); update PROJECTS.md (hub has full note)
+  - `.cursor/notes/web-research-capture-source-urls.md` — when extracting web facts, always save the canonical page URL with the extraction (hub rule: `knowledge-hub/.cursor/rules/web-research-capture-source-urls.mdc`)
 - Rule: `.cursor/rules/self-document-workflows.mdc`
 
