@@ -25,6 +25,7 @@ What is **not** authoritative:
 - Your own prior assertions in this session.
 - "It looks like" / "must be" / "based on the code paths" inferences when the source is one step away.
 - A single anecdote ("system X runs version Y and is fine, therefore version Y is safe") — that supports "version Y works in *this* configuration with *this* workload," nothing more.
+- **Generic descriptions of "how a typical install works"** when reasoning about a specific system. (E.g. "VMs typically live on storage type X" is not evidence that *this* host does it that way. Run the config-listing command.) Same fabrication-by-extrapolation pattern dressed up as domain knowledge.
 
 ## How to phrase claims honestly
 
