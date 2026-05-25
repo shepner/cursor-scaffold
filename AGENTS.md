@@ -16,7 +16,7 @@ Say "Document this workflow", "Take notes and improve", or "Add a rule for X"; t
 
 ## Current artifacts
 
-- Packs: `.cursor/packs/` (including **agent-behavior** for multi-ask delegation and learn-from-mistakes; core, git, docker, docs, quality, security, testing, time)
+- Packs: `.cursor/packs/` (including **agent-behavior** for multi-ask delegation, learn-from-mistakes, and defer-to-authoritative-sources; core, git, docker, docs, quality, security, testing, time)
 - Subagents: `.cursor/agents/` (see README there; templates in knowledge-hub)
 - Helpers:
   - `.cursor/helpers/bootstrap-project.py` — bootstrap a project (AGENTS.md, .cursor/, git)

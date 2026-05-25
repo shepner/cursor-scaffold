@@ -1,0 +1,53 @@
+---
+description: For technical claims (versions, compatibility, behavior, capabilities), consult primary authoritative sources before stating anything as fact; treat your own observations as hypotheses unless they directly support the specific claim.
+globs: []
+alwaysApply: false
+---
+
+# Defer to authoritative sources for technical claims
+
+When asserting anything about how software, hardware, or external systems work — version compatibility, package availability, kernel behavior, API contracts, vendor support, configuration semantics — the answer **must come from a primary authoritative source**, not from extrapolation, intuition, or generalizing from one observation.
+
+This rule exists because a recurring failure mode is: see one data point → invent a clean story around it → present the story as fact. The story sounds plausible, the user trusts it, and it turns out to be wrong as soon as anyone checks. That is **fabrication-by-extrapolation**; treat it as on par with making up a function signature.
+
+## What counts as authoritative
+
+In order of preference:
+
+1. **Vendor / project documentation** at the canonical URL (project wiki, official docs, RFCs, kernel.org docs).
+2. **Source-of-truth repositories** — code, changelogs, release notes, official issue trackers (GitHub issues filed by maintainers, official bug trackers).
+3. **Package metadata from the actual repo** the system uses (`apt-cache madison`, `dnf list`, container registry tags, etc., run against the configured source).
+4. **First-hand command output on the actual system in question** — `uname`, `dpkg -l`, `/sys/...`, version commands, etc.
+5. **Reports from third parties** (tech press, forum threads, Stack Overflow) — useful as leads and corroboration, **not** sufficient alone for definitive claims; verify against 1–4.
+
+What is **not** authoritative:
+
+- Your own prior assertions in this session.
+- "It looks like" / "must be" / "based on the code paths" inferences when the source is one step away.
+- A single anecdote ("system X runs version Y and is fine, therefore version Y is safe") — that supports "version Y works in *this* configuration with *this* workload," nothing more.
+
+## How to phrase claims honestly
+
+- **Cited fact**: "Per the [vendor docs](url): version 9.0 was based on kernel 6.14." — fine.
+- **First-hand observation**: "On the system right now, `/sys/module/foo/version` reports `X`." — fine.
+- **Anecdotal stability**: "System X has run version Y under workload Z without incident since [date]." — fine, with explicit scope.
+- **Inference flagged as such**: "Reports cluster on kernel 6.17+; this system is on 6.12, so likely outside the affected range. **Not confirmed by an upstream advisory.**" — fine if marked.
+- **Forbidden**: "Version 2.3.x is safe." (Generalization not in any source.) "Version 2.4.0/2.4.1 are probably affected because of code paths." (No commits or issues consulted.)
+
+## Workflow when a technical claim is needed
+
+1. **Search first.** Hit the project's docs, changelogs, issue tracker for the specific signature/symptom/version. Read the actual page, not just the snippet.
+2. **Check the actual system.** Run the command on the box — first-hand state beats inference.
+3. **Quote and link.** When you write the claim, cite the URL or command output.
+4. **Mark the gaps explicitly.** If part of the picture is inferred or unverified, say so in the same paragraph — not in a footnote the user will skip.
+
+## When the user calls this out
+
+If the user says "are you making this up?" / "did you actually check?" / "defer to authority":
+
+1. Stop. Do not defend. Acknowledge plainly what was unverified.
+2. Go look up the real answer in an authoritative source — *then* respond.
+3. Correct any artifacts (notes, rules, knowledge stores) that contain the bad claim. A bad claim left in a note is worse than one in chat — it persists.
+4. Update this rule if the pattern is new.
+
+Related: `learn-from-mistakes.mdc` (general), `web-research-capture-source-urls.mdc` (citing).
