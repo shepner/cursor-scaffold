@@ -6,9 +6,10 @@ Ensures:
 - git is initialized (even without a remote)
 - AGENTS.md exists
 - .cursor/ structure exists
-- .cursor/rules/self-document-workflows.mdc exists
+- .cursor/rules/self-document-workflows.mdc exists (alwaysApply frontmatter)
 - .cursor subfolders are tracked (README placeholders)
 - .cursor is not ignored by gitignore
+- CLAUDE.md exists and imports AGENTS.md (skip with --no-claude-md)
 
 Optionally:
 - install cursor-scaffold rule packs into the target repo (`.cursor/rules/`)
@@ -26,6 +27,11 @@ from pathlib import Path
 
 
 SELF_DOCUMENT_RULE = """\
+---
+description: Document and improve Cursor workflows in this repo (rules, skills, notes, helpers, subagents)
+alwaysApply: true
+---
+
 # Self-documenting workflows
 
 This project uses Cursor to continually document and improve its own workflows.
@@ -83,6 +89,12 @@ Project-level subagents for this repo. Agent uses them when descriptions match t
 
 - **Global subagents**: Copy from or see the knowledge-hub repo `.cursor/agents/` and `.cursor/notes/cursor-subagents.md` for templates and user-level (`~/.cursor/agents/`) setup.
 - **Define as needed**: Like helpers—when repeatable delegation would help, add a `.md` file here with clear YAML frontmatter and description.
+"""
+
+CLAUDE_MD = """\
+@AGENTS.md
+
+Rules in `.cursor/rules/*.mdc` with `alwaysApply: true` are binding here too. Claude Code does not load them automatically, so read them at the start of a session.
 """
 
 
@@ -167,6 +179,11 @@ def main(argv: list[str]) -> int:
         default=[],
         help="Pack(s) to set alwaysApply:true for when installing. Example: --enable-packs core",
     )
+    ap.add_argument(
+        "--no-claude-md",
+        action="store_true",
+        help="Do not create CLAUDE.md (which imports AGENTS.md for Claude Code)",
+    )
     args = ap.parse_args(argv)
 
     project_dir = Path(args.project_dir).expanduser().resolve()
@@ -208,7 +225,7 @@ def main(argv: list[str]) -> int:
                 )
             )
     agents_readme = cursor_agents / "README.md"
-    if cursor_agents.exists() and not agents_readme.exists():
+    if not agents_readme.exists():
         actions.append(
             Action(
                 description="Create .cursor/agents/README.md",
@@ -226,6 +243,11 @@ def main(argv: list[str]) -> int:
     agents_path = project_dir / "AGENTS.md"
     if not agents_path.exists():
         actions.append(Action(description="Create AGENTS.md", path=agents_path, write_text=agents_md_template(project_name)))
+
+    # CLAUDE.md (Claude Code reads this, not AGENTS.md)
+    claude_md_path = project_dir / "CLAUDE.md"
+    if not args.no_claude_md and not claude_md_path.exists():
+        actions.append(Action(description="Create CLAUDE.md", path=claude_md_path, write_text=CLAUDE_MD))
 
     # If the repo ignores .cursor, unignore it (required for learning)
     ensure_gitignore_allows_cursor(actions, project_dir)

@@ -25,6 +25,7 @@ Bootstrap a project directory so Cursor can “document and learn” consistentl
 - ensures a local git repo exists (even without a remote)
 - creates `AGENTS.md` if missing
 - creates `.cursor/` skeleton and `self-document-workflows` rule if missing
+- creates `CLAUDE.md` (imports `AGENTS.md` for Claude Code) if missing; pass `--no-claude-md` to skip
 - can optionally install cursor-scaffold rule packs into the target repo
 
 Run (dry-run by default):
