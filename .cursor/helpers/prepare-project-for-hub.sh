@@ -30,7 +30,7 @@ if [[ " ${ARGS[*]} " != *" --apply "* ]]; then
   echo ""
 fi
 
-"$BOOTSTRAP" "$PROJECT_PATH" "${ARGS[@]}"
+python3 "$BOOTSTRAP" "$PROJECT_PATH" "${ARGS[@]}"
 
 echo ""
 echo "Next steps (optional):"
