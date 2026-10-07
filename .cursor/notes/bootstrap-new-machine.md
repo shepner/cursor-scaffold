@@ -1,5 +1,9 @@
 # Bootstrap a new computer for the knowledge-hub methodology
 
+> **Superseded (2026-10-07).** knowledge-hub was archived to `~/local/_archive/knowledge-hub`; the hub
+> is now `~/local/hub` (start at its `AGENTS.md`). The steps
+> below describe the old knowledge-hub layout and stay until cursor-scaffold folds into hub `core/` (hub plan, Phase 8).
+
 This note describes how to set up a new machine so you can use the **knowledge hub** (multi-root Cursor workspace, “knowledge about” indexing, project-in-hub workflow) and **cursor-scaffold** (project bootstrapping, rule packs).
 
 ## Prerequisites
@@ -86,7 +90,7 @@ Adjust path names to match your layout (see hub’s AGENTS.md workspace roots ta
 
 ## Step 6: Use scoped workspaces (optional)
 
-For focused work, use the hub’s scoped workspace files under `knowledge-hub/_workspaces/`, e.g.:
+For focused work, use the scoped workspace files under `~/local/_archive/knowledge-hub/_workspaces/`, e.g.:
 
 - `knowledge-hub.personal.code-workspace` — hub + vault + email + personal
 - `knowledge-hub.work.code-workspace` — hub + work

@@ -30,4 +30,4 @@ When the user's message contains **multiple independent, likely unrelated asks**
 - Any follow-up needed
 - What the main agent did in parallel
 
-See also: scaffold note `user-preferences-and-seamless-extension.md`; knowledge-hub has `.cursor/notes/cursor-subagents.md` and full rule.
+See also: scaffold note `user-preferences-and-seamless-extension.md`; `~/local/_archive/knowledge-hub` has `.cursor/notes/cursor-subagents.md` and the full rule.

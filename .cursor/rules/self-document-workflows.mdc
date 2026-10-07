@@ -22,5 +22,5 @@ All Cursor-for-Cursor artifacts live under `.cursor/` (rules, skills, notes, hel
 - Skills: `.cursor/skills/<name>/SKILL.md`
 - Notes: `.cursor/notes/`
 - Helpers: `.cursor/helpers/`
-- Subagents: `.cursor/agents/` (project) or `~/.cursor/agents/` (user). Define as needed; clear descriptions enable automatic use. See knowledge-hub `.cursor/notes/cursor-subagents.md`.
+- Subagents: `.cursor/agents/` (project) or `~/.cursor/agents/` (user). Define as needed; clear descriptions enable automatic use. See `~/local/_archive/knowledge-hub/.cursor/notes/cursor-subagents.md`.
 

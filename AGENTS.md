@@ -8,7 +8,7 @@ This is the **cursor-scaffold** project: **source-of-truth + tooling for Cursor 
 - Prefer **small, opt-in packs** over large always-on rule sets.
 - Treat packs as **source material**; Cursor only executes rules in a repo’s `.cursor/rules/`.
 - **Bootstrap sink**: When adding content (anywhere) that would help bootstrap a new computer or project, add or update the corresponding artifact here (notes, packs, helpers). See [.cursor/notes/bootstrap-artifacts-sink.md](.cursor/notes/bootstrap-artifacts-sink.md). The hub enforces this via the rule **update-scaffold-with-bootstrap**.
-- **Subagents**: `.cursor/agents/` (project); for global setup see knowledge-hub’s `.cursor/notes/cursor-subagents.md` and `.cursor/agents/` Define as needed (like helpers). Copy to `~/.cursor/agents/` for use across all projects.
+- **Subagents**: `.cursor/agents/` (project); for global setup see `~/local/_archive/knowledge-hub/.cursor/notes/cursor-subagents.md` and `.cursor/agents/` Define as needed (like helpers). Copy to `~/.cursor/agents/` for use across all projects.
 
 ## Triggering improvement
 
@@ -17,7 +17,7 @@ Say "Document this workflow", "Take notes and improve", or "Add a rule for X"; t
 ## Current artifacts
 
 - Packs: `.cursor/packs/` (including **agent-behavior** for multi-ask delegation, learn-from-mistakes, and defer-to-authoritative-sources; core, git, docker, docs, quality, security, testing, time)
-- Subagents: `.cursor/agents/` (see README there; templates in knowledge-hub)
+- Subagents: `.cursor/agents/` (see README there; templates in `~/local/_archive/knowledge-hub`)
 - Helpers:
   - `.cursor/helpers/bootstrap-project.py` — bootstrap a project (AGENTS.md, .cursor/, git)
   - `.cursor/helpers/install_cursor_packs.py` — install packs into a target repo
@@ -34,6 +34,6 @@ Say "Document this workflow", "Take notes and improve", or "Add a rule for X"; t
   - `.cursor/notes/learn-from-mistakes.md` — when a mistake is identified: what went wrong, why, codify so it never recurs; if the wrong guidance was stored in **agent-commons**, push a superseding answer when MCP is available (hub: `.cursor/notes/agent-commons-corrections.md`)
   - `.cursor/notes/git-checkout-restores-head.md` — `git checkout -- file` restores HEAD, not the last mutation; mutate a copy when running a negative control
   - `.cursor/notes/project-folded-or-superseded.md` — when a project is retired (tool decision or folded into another); update PROJECTS.md (hub has full note)
-  - `.cursor/notes/web-research-capture-source-urls.md` — when extracting web facts, always save the canonical page URL with the extraction (hub rule: `knowledge-hub/.cursor/rules/web-research-capture-source-urls.mdc`)
+  - `.cursor/notes/web-research-capture-source-urls.md` — when extracting web facts, always save the canonical page URL with the extraction (hub rule: `~/local/hub/core/standards/grounding.md`; was `knowledge-hub/.cursor/rules/web-research-capture-source-urls.mdc`)
 - Rule: `.cursor/rules/self-document-workflows.mdc`
 

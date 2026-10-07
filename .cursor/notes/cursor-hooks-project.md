@@ -8,4 +8,4 @@ To version-control Cursor hooks with a repo:
 
 User-level hooks instead use **`~/.cursor/hooks.json`** and **`~/.cursor/hooks/`** with paths like `./hooks/script.sh`.
 
-If you use the **knowledge-hub** workspace, see that repo’s `.cursor/notes/cursor-hooks.md` for multi-root behavior and `CURSOR_PROJECT_DIR`.
+For the archived **knowledge-hub** multi-root notes, see `~/local/_archive/knowledge-hub/.cursor/notes/cursor-hooks.md` for multi-root behavior and `CURSOR_PROJECT_DIR`.

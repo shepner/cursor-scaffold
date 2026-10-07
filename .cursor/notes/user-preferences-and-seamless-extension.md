@@ -21,5 +21,5 @@ The knowledge hub has a full instance: `.cursor/notes/user-preferences-and-seaml
 ## Related
 
 - [multi-ask-and-subagent-delegation.md](multi-ask-and-subagent-delegation.md) — when to split asks and delegate
-- **cursor-subagents** — knowledge-hub `.cursor/notes/cursor-subagents.md` and `.cursor/agents/` for subagent placement and templates
+- **cursor-subagents** — `~/local/_archive/knowledge-hub/.cursor/notes/cursor-subagents.md` and `.cursor/agents/` for subagent placement and templates
 - Hub rule: `multi-ask-and-subagent-delegation.mdc` (or install `agent-behavior` pack)

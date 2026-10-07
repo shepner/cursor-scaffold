@@ -87,7 +87,7 @@ AGENTS_README = """\
 
 Project-level subagents for this repo. Agent uses them when descriptions match the task.
 
-- **Global subagents**: Copy from or see the knowledge-hub repo `.cursor/agents/` and `.cursor/notes/cursor-subagents.md` for templates and user-level (`~/.cursor/agents/`) setup.
+- **Global subagents**: Copy from or see the archived knowledge-hub (`~/local/_archive/knowledge-hub`) `.cursor/agents/` and `.cursor/notes/cursor-subagents.md` for templates and user-level (`~/.cursor/agents/`) setup.
 - **Define as needed**: Like helpers—when repeatable delegation would help, add a `.md` file here with clear YAML frontmatter and description.
 """
 
@@ -112,7 +112,7 @@ This is the **{project_name}** project. Cursor is expected to **document and imp
 ## Current artifacts
 
 - Rule: `.cursor/rules/self-document-workflows.mdc`
-- Subagents: `.cursor/agents/` (optional; see README there and knowledge-hub for templates)
+- Subagents: `.cursor/agents/` (optional; see README there and `~/local/_archive/knowledge-hub/.cursor/agents/` for templates)
 """
 
 

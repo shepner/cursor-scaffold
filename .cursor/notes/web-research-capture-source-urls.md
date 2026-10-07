@@ -6,4 +6,4 @@ When pulling facts from the **web** (search tools, browser, MCP fetch), always s
 - Facebook: prefer `photo/?fbid=…&set=…` or post permalink, not “found via search”.
 - Reporting: give **links with claims**.
 
-Hub installs this as an always-on rule: `knowledge-hub/.cursor/rules/web-research-capture-source-urls.mdc`. Copy that rule into a project’s `.cursor/rules/` if you want the same constraint outside the hub.
+The hub's rule is now `~/local/hub/core/standards/grounding.md` (knowledge-hub's always-on `web-research-capture-source-urls.mdc` was archived with it, 2026-10-07). Copy that rule into a project’s `.cursor/rules/` if you want the same constraint outside the hub.

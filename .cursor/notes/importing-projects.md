@@ -89,7 +89,7 @@ You only need this if you want the project to appear as its **own root** in the 
 
 For focused work you can use a **scoped workspace** that includes only the hub and one project:
 
-1. Copy an existing scoped workspace from `knowledge-hub/_workspaces/` (e.g. `knowledge-hub.personal.code-workspace`) to a new file, e.g. `knowledge-hub.myapp.code-workspace`.
+1. Copy an existing scoped workspace from `~/local/_archive/knowledge-hub/_workspaces/` (e.g. `knowledge-hub.personal.code-workspace`) to a new file, e.g. `knowledge-hub.myapp.code-workspace`.
 2. Add a folder entry for the project (path relative to the workspace file).
 3. Open that workspace in Cursor when you want “hub + this project” only.
 
